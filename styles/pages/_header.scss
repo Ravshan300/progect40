@@ -1,0 +1,316 @@
+.header {
+    .navbar {
+        padding: 20px 0;
+        background: #FFFFFF;
+        box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+
+        .navbar__links {
+            display: flex;
+            align-items: center;
+            column-gap: 30px;
+
+            .nav-item {
+                .nav-link {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        object-fit: contain;
+                    }
+
+                    .span {
+                        font-family: 'PF DinDisplay Pro';
+                        font-weight: 700;
+                        font-size: 18px;
+                        line-height: 100%;
+                        letter-spacing: 0.03em;
+                        text-transform: uppercase;
+                        color: #1C1D1E;
+                    }
+                }
+            }
+        }
+
+        .contact {
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+
+            .contact__numbers {
+                display: flex;
+                flex-direction: column;
+                row-gap: 18px;
+
+                a {
+                    font-family: 'PF DinDisplay Pro';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0.02em;
+                    color: #1C1D1E;
+                    text-decoration: none;
+                    border-bottom: 1px dashed #000;
+                }
+            }
+
+            .contact__border {
+                height: 60px;
+                width: 1px;
+                background-color: #E4E5E6;
+            }
+
+            .contact__social {
+                display: flex;
+                flex-direction: column;
+                row-gap: 12px;
+
+                .email__address {
+                    font-family: 'PF DinDisplay Pro';
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 100%;
+                    letter-spacing: 0.02em;
+                    color: #1C1D1E;
+                    text-decoration: none;
+                    border-bottom: 1px dashed #000;
+                }
+
+                .social__links {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+
+                    a {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero {
+        padding-top: 30px;
+        padding-bottom: 64px;
+        background-color: #F8F9FA;
+
+        .hero__wrapper {
+            box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #e4e5e6;
+            background-color: #fff;
+
+            .hero__content {
+                width: 45%;
+                padding: 50px 32px;
+                background-color: #fff;
+
+                .hero__title {
+                    @include bordertext;
+                    margin-bottom: 37px;
+                    color: #1C1D1E;
+                }
+
+                .hero__items {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 15px;
+                    margin-bottom: 93px;
+
+                    .hero__item {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 10px;
+                    }
+                }
+
+                .hero__button {
+                    @include my_btn;
+                }
+            }
+
+            .hero__carousel {
+                width: 55%;
+                height: 450px;
+
+                .carousel {
+                    height: 100%;
+
+                    .carousel-indicators {
+                        margin: 0;
+                        bottom: -40px;
+
+                        button {
+                            opacity: 1;
+                            background-color: #E4E5E6;
+
+                            &.active {
+                                background-color: #DCB658;
+                            }
+                        }
+                    }
+
+                    .carousel-inner {
+                        height: 100%;
+
+                        .carousel-item {
+                            height: 100%;
+
+                            img {
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    .header {
+        .navbar {
+            .navbar__links {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                margin-top: 50px;
+                margin-bottom: 40px !important;
+                row-gap: 15px;
+
+                .nav-item {
+                    width: 45%;
+                }
+            }
+
+            .contact {
+                justify-content: space-between;
+
+                .contact__border {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:576px) {
+    .header {
+        .navbar {
+            .navbar__links {
+                .nav-item {
+                    .nav-link {
+                        img {
+                            width: 16px;
+                            height: 16px;
+                        }
+
+                        span {
+                            font-size: 11px;
+                            line-height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .contact {
+                .contact__numbers {
+                    width: 50%;
+
+                    a {
+                        font-size: 11px;
+                        line-height: 100%;
+                    }
+                }
+
+                .contact__social {
+                    width: 50%;
+
+                    .email__address {
+                        font-size: 11px;
+                        line-height: 100%;
+                    }
+
+                    .social__links {
+                        a {
+                            img {
+                                width: 20px;
+                                height: 20px;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .hero {
+            .container {
+                padding: 0;
+            }
+
+            padding-top: 0;
+
+            .hero__wrapper {
+                flex-direction: column;
+
+                .hero__content {
+                    width: 100%;
+                    order: 2;
+                    padding: 50px 20px 20px;
+
+                    .hero__title {
+                        font-size: 18px;
+                        line-height: 130%;
+                        margin-bottom: 18px;
+                    }
+
+                    .hero__items {
+                        row-gap: 10px;
+                        margin-bottom: 20px;
+
+                        .hero__item {
+                            svg {
+                                width: 12px;
+                                height: 12px;
+                            }
+
+                            span {
+                                font-size: 14px;
+                                line-height: 130%;
+                            }
+                        }
+                    }
+                }
+
+                .hero__carousel {
+                    width: 100%;
+                    order: 1;
+                    height: 200px;
+
+                    .carousel {
+                        .carousel-indicators {
+                            bottom: -25px;
+                        }
+                    }
+
+                    .carousel-control-prev,
+                    .carousel-control-next {
+                        svg {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
